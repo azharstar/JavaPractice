@@ -1,55 +1,20 @@
-package encapsulation;
+package variables;
 
 public class Student {
-	private String studentId;
-	private String studentName;
-	private String standard;
-	private int rollNumber;
-	private int age;
-	
-	// Getter Method for studentId
-	public String getStudentId() {
-		return studentId;
+	int a=10;			//instance variable
+	static int b=20;	//static variable
+	void show() {
+		int c=30;
+		System.out.println(c);
 	}
-	// Setter Method for studentId
-	public void setStudentId(String studentId) {
-		this.studentId = studentId;
+	void display() {
+		System.out.println(a);
+		System.out.println(b);
+		//System.out.println(c); errror due to accessing local variable 'c'
 	}
-	// Getter Method for studentName
-	public String getStudentName() {
-		return studentName;
+	public static void main(String[] args) {
+		Student s=new Student();
+		s.display();
+		s.show();
 	}
-	// Setter Method for studentName
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
-	}
-	// Getter Method for standard
-	public String getStandard() {
-		return standard;
-	}
-	// Setter Method for standard
-	public void setStandard(String standard) {
-		this.standard = standard;
-	}
-	// Getter Method for rollNumber
-	public int getRollNumber() {
-		return rollNumber;
-	}
-	// Setter Method for rollNumber
-	public void setRollNumber(int rollNumber) {
-		this.rollNumber = rollNumber;
-	}
-	// Getter Method for age
-	public int getAge() {
-		return age;
-	}
-	// Setter Method for age
-	public void setAge(int age) {
-		this.age = age;
-	}
-	
-	
-
-
-
 }
