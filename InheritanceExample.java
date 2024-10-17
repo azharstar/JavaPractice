@@ -3,13 +3,13 @@ package inheritance;
 import java.util.Scanner;
 
 // Base Class
-class Car {
+class Cars {
     String engineType;
     double fuelCapacity;
     Scanner sc;
 
     // Constructor to initialize the Scanner object
-    Car(){
+    Cars(){
         sc = new Scanner(System.in);
     }
 
@@ -30,7 +30,7 @@ class Car {
 }
 
 // Derived Class
-class Mahindra extends Car {
+class Mahindra extends Cars {
     String model;
     int year;
     String color;
