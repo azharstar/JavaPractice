@@ -1,27 +1,55 @@
-package datatypes;
+package encapsulation;
 
 public class Student {
-//		Initializing Student details
-	int s_id;
-	String s_name;
-	long p_no;
-//		creating a method called "fun"
-	void fun() {
-		System.out.println("Student is having fun :)");
+	private String studentId;
+	private String studentName;
+	private String standard;
+	private int rollNumber;
+	private int age;
+	
+	// Getter Method for studentId
+	public String getStudentId() {
+		return studentId;
 	}
-	public static void main(String[] args) {
-//		creating object for class
-		Student std =new Student();
-//		Assigning values
-		std.s_name="Shiva";
-		std.s_id=89;
-		std.p_no=999888;
-//		calling the initialized elements
-		System.out.println(std.s_id);
-		System.out.println(std.s_name);
-		System.out.println(std.p_no);
-//		calling the method
-		std.fun();
+	// Setter Method for studentId
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
 	}
-}
+	// Getter Method for studentName
+	public String getStudentName() {
+		return studentName;
+	}
+	// Setter Method for studentName
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+	// Getter Method for standard
+	public String getStandard() {
+		return standard;
+	}
+	// Setter Method for standard
+	public void setStandard(String standard) {
+		this.standard = standard;
+	}
+	// Getter Method for rollNumber
+	public int getRollNumber() {
+		return rollNumber;
+	}
+	// Setter Method for rollNumber
+	public void setRollNumber(int rollNumber) {
+		this.rollNumber = rollNumber;
+	}
+	// Getter Method for age
+	public int getAge() {
+		return age;
+	}
+	// Setter Method for age
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	
 
+
+
+}
