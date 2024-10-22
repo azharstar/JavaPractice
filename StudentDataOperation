@@ -1,0 +1,161 @@
+package studentexample;
+
+import java.util.*;
+
+// This class contains student personal information
+public class Student {
+	// Variable to store student id
+	private String stdId;
+	// Variable to store student Name
+	private String stdName;
+	// Variable to store data of standard i.e, the class in which the student is present
+	private String standard;
+	// Variable to store roll number
+	private int rollNo;
+	// Variable to store age of student
+	private int age;
+	
+	// Parameterized Constructor
+	public Student(String stdId, String stdName, String standard, int rollNo, int age) {
+		super();
+		this.stdId = stdId;
+		this.stdName = stdName;
+		this.standard = standard;
+		this.rollNo = rollNo;
+		this.age = age;
+	}
+	// Getter method to return Student Id
+	public String getStdId() {
+		return stdId;
+	}
+	// Setter method to set Student Id
+	public void setStdId(String stdId) {
+		this.stdId = stdId;
+	}
+	// Getter method to return Student Name
+	public String getStdName() {
+		return stdName;
+	}
+	// Setter method to set Student Name
+	public void setStdName(String stdName) {
+		this.stdName = stdName;
+	}
+	// Getter method to return Standard in which is student is studying
+	public String getStandard() {
+		return standard;
+	}
+	// Setter method to set Standard in which is student is studying
+	public void setStandard(String standard) {
+		this.standard = standard;
+	}
+	// Getter method to return Roll Number
+	public int getRollNo() {
+		return rollNo;
+	}
+	// Setter method to set Roll Number
+	public void setRollNo(int rollNo) {
+		this.rollNo = rollNo;
+	}
+	// Getter method to return Age of Student
+	public int getAge() {
+		return age;
+	}
+	// Setter method to set Age of Student
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	@Override
+	public String toString() {
+		return "Student Id : " + stdId +
+				"\n Student Name : " + stdName +
+				"\n Standard : " + standard +
+				"\n Roll Number : " + rollNo +
+				"\n Age : " + age ;
+	}
+
+}
+public class StudentOperation {
+	// member variable of ArrayList type to store students
+	private ArrayList<Student> stdList;
+	
+	//Constructor
+	public StudentOperation() {
+		stdList = new ArrayList<>();
+	}
+	
+	// method to receive input data of student through keyboard and store it in arraylist
+	public void insertStudent() {
+		// Creating object of Scanner class
+		Scanner sc = new Scanner(System.in);
+		System.out.println("----- Student Data Entry -----");	
+		System.out.println("Student Id : ");
+		String sid = sc.nextLine();
+		System.out.println("Name : ");
+		String name = sc.nextLine();
+		System.out.println("Standard : ");
+		String std = sc.nextLine();
+		System.out.println("Roll Number : ");
+		int roll = sc.nextInt();
+		System.out.println("Age(in years) : ");
+		int age = sc.nextInt();
+		System.out.println("----------------------------------------------------");
+		
+		// Creating Student object
+		Student student = new Student(sid, name, std, roll, age);
+		
+		//Inserting Student into ArrayList
+		stdList.add(student);
+		System.out.println("Student Successfully inserted");
+		System.out.println("----------------------------------------------------");
+		
+	}
+	
+	// Method to display list of student 
+	public void displayStudentList() {
+		if(stdList.isEmpty()) {
+			System.out.println("List is Empty");
+		}
+		else {
+			// Creating Iterator from ArrayList
+			Iterator<Student> studentList = stdList.iterator();
+			System.out.println("---- Student List ----");
+			while(studentList.hasNext()) {
+				System.out.println(studentList.next());
+			}
+		}
+	}
+}
+
+public class StudentDataOperation {
+
+	public static void main(String[] args) {
+		// Scanner object creation
+		Scanner sc = new Scanner(System.in);
+		
+		// Creating object of Student Operation
+		StudentOperation studentOperation = new StudentOperation();
+		int choice;
+		do {
+			System.out.println("----- Student Operaion -----");
+			System.out.println("1. Insert Student");
+			System.out.println("2. Display Student List");
+			System.out.println("----------------------------------------------------");
+			
+			System.out.println("Select any one operation");
+			int operation = sc.nextInt();
+			switch(operation) {
+				case 1 :  studentOperation.insertStudent();
+				break;
+				case 2 : studentOperation.displayStudentList();
+				break;
+				default : System.out.println("Invalid Operation...");
+				break;
+			}
+			System.out.println("Press 0 to exit or any other Integer to continue :- ");
+			choice = sc.nextInt();
+			}while(choice != 0);
+		System.out.println("--------------------------");
+	}
+
+}
